@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Hosting Upload</title>
+  <script src="script.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    form { margin-top: 20px; }
+    input[type="file"] { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Image Hosting Upload</h1>
+  <p id="serverInfo">Selected Server: <span id="serverName"></span></p>
+  
+  <form id="uploadForm">
+    <input type="file" id="fileInput" accept="image/*" required>
+    <button type="submit">Upload Image</button>
+  </form>
+  
+  <div id="imagePreview">
+    <!-- Optional: Show a preview or upload status -->
+  </div>
+</body>
+</html>
