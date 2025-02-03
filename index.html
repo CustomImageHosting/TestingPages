@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Image Hosting - Terms & Conditions</title>
-  <script src="script.js" defer></script>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .terms { border: 1px solid #ccc; padding: 10px; max-width: 600px; }
-    button { padding: 10px 20px; font-size: 16px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hosting Service</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to Our Image Hosting Service</h1>
-  <p>Please read and agree to our Terms &amp; Conditions to continue.</p>
-  <div class="terms">
-    <p>
-      [Insert your Terms &amp; Conditions here...]
-    </p>
-  </div>
-  <button id="agreeButton">I Agree</button>
+    <div class="container">
+        <!-- Agreement Page -->
+        <div id="agreement-page" class="step active">
+            <h1>Terms of Service</h1>
+            <div class="terms-box">
+                <p>By using this service you agree to:</p>
+                <ul>
+                    <li>Not upload illegal content</li>
+                    <li>Comply with DMCA regulations</li>
+                    <li>Accept content moderation</li>
+                </ul>
+            </div>
+            <button onclick="acceptTerms()">I Agree</button>
+        </div>
+
+        <!-- Server Selection -->
+        <div id="server-selection" class="step">
+            <h1>Choose Server Location</h1>
+            <div class="server-list">
+                <div class="server-card" onclick="selectServer('US-East')">
+                    <h3>🇺🇸 US East</h3>
+                    <p>New York Datacenter</p>
+                </div>
+                <div class="server-card" onclick="selectServer('EU-Central')">
+                    <h3>🇩🇪 EU Central</h3>
+                    <p>Frankfurt Datacenter</p>
+                </div>
+                <div class="server-card" onclick="selectServer('Asia-Pacific')">
+                    <h3>🇸🇬 Asia Pacific</h3>
+                    <p>Singapore Datacenter</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Hosting Interface -->
+        <div id="hosting-interface" class="step">
+            <h1 id="server-name-display"></h1>
+            <div class="upload-box">
+                <input type="file" id="image-input" accept="image/*">
+                <div id="image-preview"></div>
+                <button onclick="uploadImage()">Upload Image</button>
+                <div id="upload-status"></div>
+                <div id="result-url" class="hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
